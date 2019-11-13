@@ -53,6 +53,8 @@ class grade1 {
     String Mid = readEntry("Id #: ");
     String query = "insert into Members values (" +
             "'" + Fname + "','" + Lname + "','" + "to_date('" + Bdate + "','MM-DD-YYYY')" + "','" + Sex + "','" + Mid + "')";
+
+    system.out.println(query);
     try {
       int nrows = stmt.executeUpdate(query);
     } catch (SQLException e) {
