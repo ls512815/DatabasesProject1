@@ -26,8 +26,8 @@ class grade1 {
   String query1 = "select *" +
                   "from Members ";
   String query;
-  String term_in = readEntry("Term: ");
-  query = query1 + term_in + "'";
+
+  query = query1;
    
   Statement stmt = conn.createStatement (); 
   ResultSet rset = stmt.executeQuery(query);
