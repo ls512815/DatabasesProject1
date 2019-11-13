@@ -55,6 +55,7 @@ class grade1 {
             "'" + Fname + "','" + Lname + "','" + "to_date('" + Bdate + "','MM-DD-YYYY')" + "','" + Sex + "','" + Mid + "')";
 
     system.out.println(query);
+    
     try {
       int nrows = stmt.executeUpdate(query);
     } catch (SQLException e) {
