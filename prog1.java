@@ -47,8 +47,6 @@ class GradeBook {
                    break;
         case '3' : g1.add_students(conn);
                    break;
-        case '4' : g1.select_course(conn);
-                   break;
         case 'q' : done = true;
                    break;
         default  : System.out.println("Type in option again");
