@@ -45,13 +45,14 @@ class grade1 {
          
     Statement stmt = conn.createStatement(); 
 
+    //to_date('04-05-1967','MM-DD-YYYY'),
     String Fname  = readEntry("First Name: ");
     String Lname = readEntry("Last Name: ");
-    String Bdate = readEntry("Birthdate ");
+    String Bdate = readEntry("Birthdate: ");
     String Sex = readEntry("Sex: ");
     String Mid = readEntry("Id #: ");
     String query = "insert into Members values (" +
-            "'" + Fname + "','" + Lname + "','" + Bdate + "','" + Sex + "','" + Mid + "')";
+            "'" + Fname + "','" + Lname + "','" + "to_date('" + Bdate + "','MM-DD-YYYY')" + "','" + Sex + "','" + Mid + "')";
     try {
       int nrows = stmt.executeUpdate(query);
     } catch (SQLException e) {
