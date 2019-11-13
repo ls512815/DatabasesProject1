@@ -12,26 +12,50 @@ class grade1 {
 
   void print_menu() {
     System.out.println("      GRADEBOOK PROGRAM\n");
-    System.out.println("(1) Add Catalog");
-    System.out.println("(2) Add Course");
-    System.out.println("(3) Add Students");
-    System.out.println("(4) Select Course");
+    System.out.println("(1) Select Members Table");
+    System.out.println("(2) Add Member");
+    System.out.println("(3) Delete Member");
+    System.out.println("(4) Change Member Data");
     System.out.println("(q) Quit\n");
   }
 
-  void add_catalog(Connection conn) 
+
+  void select_Members(Connection conn) 
+  throws SQLException, IOException {
+
+  String query1 = "select *" +
+                  "from Members ";
+  String query;
+  String term_in = readEntry("Term: ");
+  query = query1 + term_in + "'";
+   
+  Statement stmt = conn.createStatement (); 
+  ResultSet rset = stmt.executeQuery(query);
+  System.out.println("");
+  while (rset.next ()) { 
+    System.out.println(rset.getString(1) + "   " +
+                       rset.getString(2) + "   " +
+                       rset.getString(3));
+  } 
+  System.out.println("");
+}
+
+  void add_Member(Connection conn) 
     throws SQLException, IOException {
          
     Statement stmt = conn.createStatement(); 
 
-    String cnum   = readEntry("Course Number: ");
-    String ctitle = readEntry("Course Title : ");
-    String query = "insert into catalog values (" +
-            "'" + cnum + "','" + ctitle + "')";
+    String Fname  = readEntry("First Name: ");
+    String Lname = readEntry("Last Name: ");
+    String Bdate = readEntry("Birthdate ");
+    String Sex = readEntry("Sex: ");
+    String Mid = readEntry("Id #: ");
+    String query = "insert into Members values (" +
+            "'" + Fname + "','" + Lname + "','" + Bdate + "','" + Sex + "','" + Mid + "')";
     try {
       int nrows = stmt.executeUpdate(query);
     } catch (SQLException e) {
-        System.out.println("Error Adding Catalog Entry");
+        System.out.println("Error Adding Member");
         while (e != null) {
           System.out.println("Message     : " + e.getMessage());
           e = e.getNextException();
@@ -39,7 +63,7 @@ class grade1 {
         return;
       }
     stmt.close();
-    System.out.println("Added Catalog Entry");
+    System.out.println("Added Member");
   }
 
   void add_course(Connection conn) 
@@ -95,58 +119,6 @@ class grade1 {
     stmt.close();
   }
 
-  void select_course(Connection conn) 
-    throws SQLException, IOException {
-
-    String query1 = "select distinct lineno,courses.cno,ctitle " +
-                    "from courses,catalog " +
-                    "where courses.cno = catalog.cno and term = '";
-    String query;
-    String term_in = readEntry("Term: ");
-    query = query1 + term_in + "'";
-     
-    Statement stmt = conn.createStatement (); 
-    ResultSet rset = stmt.executeQuery(query);
-    System.out.println("");
-    while (rset.next ()) { 
-      System.out.println(rset.getString(1) + "   " +
-                         rset.getString(2) + "   " +
-                         rset.getString(3));
-    } 
-    System.out.println("");
-    String ls = readEntry("Select a course line number: ");
-    
-    grade2 g2 = new grade2();
-    boolean done;
-    char ch,ch1;
-
-    done = false;
-    do {
-      g2.print_menu();
-      System.out.print("Type in your option:");
-      System.out.flush();
-      ch = (char) System.in.read();
-      ch1 = (char) System.in.read();
-      switch (ch) {
-        case '1' : g2.add_enrolls(conn,term_in,ls);
-                   break;
-        case '2' : g2.add_course_component(conn,term_in,ls);
-                   break;
-        case '3' : g2.add_scores(conn,term_in,ls);
-                   break;
-        case '4' : g2.modify_score(conn,term_in,ls);
-                   break;
-        case '5' : g2.drop_student(conn,term_in,ls);
-                   break;
-        case '6' : g2.print_report(conn,term_in,ls);
-                   break;
-        case 'q' : done = true;
-                   break;
-        default  : System.out.println("Type in option again");
-      }
-    } while (!done);
-
-  }
 
   //readEntry function -- to read input string
   static String readEntry(String prompt) {

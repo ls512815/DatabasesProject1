@@ -8,7 +8,7 @@
 import java.io.*; 
 import java.sql.*;
 
-class gradebook { 
+class GradeBook { 
 
   public static void main (String args []) 
       throws SQLException, IOException { 
@@ -41,9 +41,9 @@ class gradebook {
       ch = (char) System.in.read();
       ch1 = (char) System.in.read();
       switch (ch) {
-        case '1' : g1.add_catalog(conn);
+        case '1' : g1.select_Members(conn);
                    break;
-        case '2' : g1.add_course(conn);
+        case '2' : g1.add_Member(conn);
                    break;
         case '3' : g1.add_students(conn);
                    break;
