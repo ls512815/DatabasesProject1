@@ -76,14 +76,14 @@ class grade1 {
     String lname = readEntry("Last Name: ");
 
 
-    String query = "delete from members where fname=" + fname + "and lname=" + lname;
+    String query = "delete from members where fname=" + "'" + fname + "'" + "and lname=" + "'" + lname + "'";
       
            
     Statement stmt = conn.createStatement (); 
     try {
       stmt.executeUpdate(query);
     } catch (SQLException e) {
-      System.out.println("Course was not added! Failure!");
+      System.out.println("Error deleting member");
       return;
     }
     System.out.println("Course was added! Success!");
