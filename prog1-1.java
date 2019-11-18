@@ -35,7 +35,9 @@ class grade1 {
   while (rset.next ()) { 
     System.out.println(rset.getString(1) + "   " +
                        rset.getString(2) + "   " +
-                       rset.getString(3));
+                       rset.getString(3) + "   " +
+                       rset.getString(4) + "   " +
+                       rset.getString(5));
   } 
   System.out.println("");
 }
