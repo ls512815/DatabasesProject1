@@ -90,6 +90,32 @@ class grade1 {
     stmt.close();
   }
 
+
+  void change_id(Connection conn) 
+  throws SQLException, IOException {
+
+  system.out.println("enter the first and last name of the id you want to change")
+  String fname = readEntry("First name: ");
+  String lname = readEntry("Last Name: ");
+  String id = readEntry("new id: ")
+
+
+
+String query = "update members set m_id=" + "'" + id + "'" + "where fname=" + "''" + fname + "''" + "and lname=" + "''" + lname + "'";
+
+     
+Statement stmt = conn.createStatement (); 
+try {
+stmt.executeUpdate(query);
+} catch (SQLException e) {
+System.out.println("Error updating member");
+return;
+}
+System.out.println("Member id was updated!");
+stmt.close();
+}
+
+
   void add_students(Connection conn) 
       throws SQLException, IOException {
 
