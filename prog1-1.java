@@ -52,7 +52,7 @@ class grade1 {
     String Sex = readEntry("Sex: ");
     String Mid = readEntry("Id #: ");
     String query = "insert into Members values (" +
-            "'" + Fname + "','" + Lname + "'," + "to_date('" + Bdate + "','MM-DD-YYYY')" + ",'" + Sex + "','" + M_id + "')";
+            "'" + Fname + "','" + Lname + "'," + "to_date('" + Bdate + "','MM-DD-YYYY')" + ",'" + Sex + "','" + Mid + "')";
 
 
     try {
