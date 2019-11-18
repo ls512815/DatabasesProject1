@@ -97,7 +97,7 @@ class grade1 {
   system.out.println("enter the first and last name of the id you want to change")
   String fname = readEntry("First name: ");
   String lname = readEntry("Last Name: ");
-  String id = readEntry("new id: ")
+  String id = readEntry("new id: ");
 
 
 

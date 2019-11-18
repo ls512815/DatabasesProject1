@@ -47,6 +47,8 @@ class GradeBook {
                    break;
         case '3' : g1.delete_member(conn);
                    break;
+        case '4' : g1.change_id(conn);
+                  break;
         case 'q' : done = true;
                    break;
         default  : System.out.println("Type in option again");
