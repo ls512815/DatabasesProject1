@@ -101,7 +101,7 @@ class grade1 {
 
 
 
-String query = "update members set m_id=" + "'" + id + "'" + "where fname=" + "''" + fname + "''" + "and lname=" + "''" + lname + "'";
+String query = "update members set m_id=" + "'" + id + "'" + " where fname=" + "'" + fname + "'" + "and lname=" + "'" + lname + "'";
 
      
 Statement stmt = conn.createStatement (); 
