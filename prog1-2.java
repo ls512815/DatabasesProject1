@@ -61,7 +61,7 @@ class grade2 {
     try {
       stmt.executeUpdate(query);
     } catch (SQLException e) {
-        System.out.println("Component was not added! Failure!");
+        System.out.println("Component was not added! This is a Failure!");
         while (e != null) {
           System.out.println("Message     : " + e.getMessage());
           e = e.getNextException();

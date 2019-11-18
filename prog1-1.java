@@ -52,10 +52,10 @@ class grade1 {
     String Sex = readEntry("Sex: ");
     String Mid = readEntry("Id #: ");
     String query = "insert into Members values (" +
-            "'" + Fname + "','" + Lname + "','" + "to_date('" + Bdate + "','MM-DD-YYYY')" + "','" + Sex + "','" + Mid + "')";
+            "'" + Fname + "','" + Lname + "'," + "to_date('" + Bdate + "','MM-DD-YYYY')" + ",'" + Sex + "','" + Mid + "')";
 
-    System.out.println(query);
-
+    System.out.println(query); 
+    //added comments 
     try {
       int nrows = stmt.executeUpdate(query);
     } catch (SQLException e) {
