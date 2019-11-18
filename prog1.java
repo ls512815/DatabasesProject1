@@ -45,7 +45,7 @@ class GradeBook {
                    break;
         case '2' : g1.add_Member(conn);
                    break;
-        case '3' : g1.add_students(conn);
+        case '3' : g1.delete_member(conn);
                    break;
         case 'q' : done = true;
                    break;

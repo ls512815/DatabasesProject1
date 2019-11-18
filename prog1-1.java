@@ -54,8 +54,7 @@ class grade1 {
     String query = "insert into Members values (" +
             "'" + Fname + "','" + Lname + "'," + "to_date('" + Bdate + "','MM-DD-YYYY')" + ",'" + Sex + "','" + Mid + "')";
 
-    System.out.println(query); 
-    //added comments 
+
     try {
       int nrows = stmt.executeUpdate(query);
     } catch (SQLException e) {
@@ -70,21 +69,15 @@ class grade1 {
     System.out.println("Added Member");
   }
 
-  void add_course(Connection conn) 
+  void delete_member(Connection conn) 
         throws SQLException, IOException {
 
-    String term_in = readEntry("Term         : ");
-    String ls      = readEntry("Line Number  : ");
-    String cnum    = readEntry("Course Number: ");
-    String as      = readEntry("A Cutoff     : ");
-    String bs      = readEntry("B Cutoff     : ");
-    String cs      = readEntry("C Cutoff     : ");
-    String ds      = readEntry("D Cutoff     : ");
+    String fname = readEntry("First name: ");
+    String lname = readEntry("Last Name: ");
 
-    String query = "insert into courses values (" +
-            "'" + term_in + "'," + ls + "," + 
-            "'" + cnum + "'," + as + "," + 
-            bs + "," + cs + "," + ds + ")";
+
+    String query = "delete from members where fname=" + fname + "and lname=" + lname;
+      
            
     Statement stmt = conn.createStatement (); 
     try {
