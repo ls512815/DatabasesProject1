@@ -86,7 +86,7 @@ class grade1 {
       System.out.println("Error deleting member");
       return;
     }
-    System.out.println("Course was added! Success!");
+    System.out.println("Member was deleted!");
     stmt.close();
   }
 
