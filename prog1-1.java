@@ -94,7 +94,7 @@ class grade1 {
   void change_id(Connection conn) 
   throws SQLException, IOException {
 
-  system.out.println("enter the first and last name of the id you want to change")
+  system.out.println("enter the first and last name of the id you want to change");
   String fname = readEntry("First name: ");
   String lname = readEntry("Last Name: ");
   String id = readEntry("new id: ");
