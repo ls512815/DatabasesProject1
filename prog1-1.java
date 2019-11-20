@@ -35,7 +35,7 @@ class grade1 {
   while (rset.next ()) { 
     System.out.println(rset.getString(1) + "   " +
                        rset.getString(2) + "   " +
-                       rset.getString(3) + "   " +
+                       rset.getString(3).substring(0,10) + "   " +
                        rset.getString(4) + "   " +
                        rset.getString(5));
   } 
@@ -56,7 +56,6 @@ class grade1 {
     String query = "insert into Members values (" +
             "'" + Fname + "','" + Lname + "'," + "to_date('" + Bdate + "','MM-DD-YYYY')" + ",'" + Sex + "','" + Mid + "')";
 
-//"to_date('" + Bdate + "','MM-DD-YYYY')"
     try {
       int nrows = stmt.executeUpdate(query);
     } catch (SQLException e) {
