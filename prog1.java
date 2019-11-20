@@ -41,13 +41,13 @@ class Museum {
       ch = (char) System.in.read();
       ch1 = (char) System.in.read();
       switch (ch) {
-        case '1' : g1.select_Members(conn);
+        case '1' : m1.select_Members(conn);
                    break;
-        case '2' : g1.add_Member(conn);
+        case '2' : m1.add_Member(conn);
                    break;
-        case '3' : g1.delete_member(conn);
+        case '3' : m1.delete_member(conn);
                    break;
-        case '4' : g1.change_id(conn);
+        case '4' : m1.change_id(conn);
                   break;
         case 'q' : done = true;
                    break;
