@@ -8,7 +8,7 @@
 import java.sql.*; 
 import java.io.*; 
 
-class grade1 { 
+class members { 
 
   void print_menu() {
     System.out.println("      GRADEBOOK PROGRAM\n");
@@ -103,7 +103,7 @@ class grade1 {
 
 
 String query = "update members set m_id=" + "'" + id + "'" + " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
- System.out.println(query);
+
      
 Statement stmt = conn.createStatement (); 
 try {
@@ -116,32 +116,6 @@ System.out.println("Member id was updated!");
 stmt.close();
 }
 
-
-  void add_students(Connection conn) 
-      throws SQLException, IOException {
-
-    String id, ln, fn, mi;
-    PreparedStatement stmt = conn.prepareStatement(
-      "insert into students values (?, ?, ?, ?)"  ); 
-    do {
-      id = readEntry("ID (0 to stop): ");
-      if (id.equals("0"))
-        break;
-      ln = readEntry("Last  Name    : ");
-      fn = readEntry("First Name    : ");
-      mi = readEntry("Middle Initial: ");
-      try {
-        stmt.setString(1,id);
-        stmt.setString(2,fn);
-        stmt.setString(3,ln);
-        stmt.setString(4,mi);
-        stmt.executeUpdate();
-      } catch (SQLException e) {
-        System.out.println("Student was not added! Error!");
-      }
-    } while (true);  
-    stmt.close();
-  }
 
 
   //readEntry function -- to read input string

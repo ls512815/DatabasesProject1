@@ -8,12 +8,12 @@
 import java.io.*; 
 import java.sql.*;
 
-class GradeBook { 
+class Museum { 
 
   public static void main (String args []) 
       throws SQLException, IOException { 
 
-    grade1 g1 = new grade1();
+    members m1 = new members();
     boolean done;
     char ch,ch1;
     byte num = 0;
