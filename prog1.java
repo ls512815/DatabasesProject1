@@ -35,7 +35,7 @@ class Museum {
 
     done = false;
     do {
-      g1.print_menu();
+      m1.print_menu();
       System.out.print("Type in your option:");
       System.out.flush();
       ch = (char) System.in.read();
