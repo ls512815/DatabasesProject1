@@ -104,7 +104,8 @@ class members {
 
   String query = "update members set m_id=" + id +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
 
-      
+  System.out.println(query);
+  
   Statement stmt = conn.createStatement (); 
   try {
   stmt.executeUpdate(query);
