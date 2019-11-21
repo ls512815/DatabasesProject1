@@ -102,19 +102,19 @@ class members {
 
 
 
-String query = "update members set m_id=" + "'" + id + "'" + " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
+  String query = "update members set m_id=" + id +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
 
-     
-Statement stmt = conn.createStatement (); 
-try {
-stmt.executeUpdate(query);
-} catch (SQLException e) {
-System.out.println("Error updating member");
-return;
-}
-System.out.println("Member id was updated!");
-stmt.close();
-}
+      
+  Statement stmt = conn.createStatement (); 
+  try {
+  stmt.executeUpdate(query);
+  } catch (SQLException e) {
+  System.out.println("Error updating member");
+  return;
+  }
+  System.out.println("Member id was updated!");
+  stmt.close();
+  }
 
 
 
