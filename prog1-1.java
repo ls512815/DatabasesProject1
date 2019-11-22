@@ -98,11 +98,11 @@ class members {
   System.out.println("enter the first and last name of the id you want to change");
   String fname = readEntry("First name: ");
   String lname = readEntry("Last Name: ");
-  String id = readEntry("new id: ");
+  String newlname = readEntry("new Last Name: ");
 
 
 
-  String query = "update members set m_id=" + "'" + id + "'" +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
+  String query = "update members set lname=" + "'" + newlname + "'" +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
 
   System.out.println(query);
 
@@ -113,7 +113,7 @@ class members {
   System.out.println("Error updating member");
   return;
   }
-  System.out.println("Member id was updated!");
+  System.out.println("Member bdate was updated!");
   stmt.close();
   }
 
