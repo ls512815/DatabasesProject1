@@ -13,7 +13,7 @@ class members {
   void print_menu() {
     System.out.println("      GRADEBOOK PROGRAM\n");
     System.out.println("(1) Select Members Table");
-    System.out.println("(2) dd Member");
+    System.out.println("(2) Add Member");
     System.out.println("(3) Delete Member");
     System.out.println("(4) Change Member Data");
     System.out.println("(q) Quit\n");
@@ -102,7 +102,7 @@ class members {
 
 
 
-  String query = "update members set m_id=" + id +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
+  String query = "update members set m_id=" + "'" + id + "'" +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
 
   System.out.println(query);
 
