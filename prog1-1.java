@@ -98,13 +98,13 @@ class members {
   System.out.println("enter the first and last name of the id you want to change");
   String fname = readEntry("First name: ");
   String lname = readEntry("Last Name: ");
-  String newlname = readEntry("new Last Name: ");
+  String newlname = readEntry("New Last Name: ");
 
 
 
   String query = "update members set lname=" + "'" + newlname + "'" +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
 
-  System.out.println(query);
+ 
 
   Statement stmt = conn.createStatement (); 
   try {
