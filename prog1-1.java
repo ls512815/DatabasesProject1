@@ -162,7 +162,7 @@ class members {
   ResultSet rset4 = stmt.executeQuery(query4);
   System.out.println("\n" + "                Special thanks to our donors, ");
   while (rset4.next ()) { 
-    System.out.print(rset4.getString(1) + rset4.getString(2) + ", ");
+    System.out.print(rset4.getString(1) + " " + rset4.getString(2) + ", ");
   } 
   System.out.println("");
 }
