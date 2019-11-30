@@ -145,7 +145,9 @@ class members {
 void report2(Connection conn) 
 throws SQLException, IOException {
 
-String query1 = "select distinct start_date from pieces where end_date is not null;";
+String query1 = "select distinct start_date"
+                + "from pieces"
+                + "where end_date is not null;";
 String query;
 
 query = query1;
