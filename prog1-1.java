@@ -16,6 +16,8 @@ class members {
     System.out.println("(2) Add Member");
     System.out.println("(3) Delete Member");
     System.out.println("(4) Change Member Data");
+    System.out.println("(5) Display Report 1");
+    System.out.println("(6) Display Report 2");
     System.out.println("(q) Quit\n");
   }
 
@@ -116,6 +118,27 @@ class members {
   System.out.println("Member bdate was updated!");
   stmt.close();
   }
+
+
+  void report1(Connection conn) 
+  throws SQLException, IOException {
+
+  String query1 = "select distinct start_date from pieces where end_date is not null;";
+ 
+   
+
+  Statement stmt = conn.createStatement (); 
+  ResultSet rset = stmt.executeQuery(query1);
+  System.out.println("");
+  while (rset.next ()) { 
+    System.out.println(rset.getString(1) + "   " +
+                       rset.getString(2) + "   " +
+                       rset.getString(3).substring(0,10) + "   " +
+                       rset.getString(4) + "   " +
+                       rset.getString(5));
+  } 
+  System.out.println("");
+}
 
 
 

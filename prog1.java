@@ -49,6 +49,8 @@ class Museum {
                    break;
         case '4' : m1.change_id(conn);
                   break;
+        case '5' : m1.report1(conn);
+                  break;
         case 'q' : done = true;
                    break;
         default  : System.out.println("Type in option again");
