@@ -135,6 +135,11 @@ class members {
   System.out.println("");
 }
 
+
+
+
+
+
 void report2(Connection conn) 
 throws SQLException, IOException {
 
@@ -150,7 +155,8 @@ Statement stmt = conn.createStatement ();
 ResultSet rset = stmt.executeQuery(query);
 System.out.println("");
 while (rset.next ()) { 
-  System.out.println(rset.getString(1)+ " ");
+  System.out.println("There are new paintings arriving on " +
+                      rset.getString(1)+ " ");
 } 
 System.out.println("");
 }
