@@ -130,8 +130,9 @@ class members {
   ResultSet rset = stmt.executeQuery(query);
   System.out.println("");
   while (rset.next ()) { 
-    System.out.println("There are new paintings arriving on " +
-                        rset.getString(1).substring(0,10) + "!");
+    System.out.println("There are some new paintings arriving on " +
+                        rset.getString(1).substring(0,10) + "! " +
+                        "___________________________________________");
   } 
   System.out.println("");
 }
