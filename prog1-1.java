@@ -153,7 +153,8 @@ class members {
   System.out.println("");
   while (rset3.next ()) { 
     System.out.println("      The new paintings will be in gallery "+ 
-                        rset3.getString(1) + ", but don't limit yourself to just that one! Come and see all our wonderful exhibits");
+                        rset3.getString(1) + ", but don't limit yourself to just that one!" + "\n" + 
+                        "Come and see all our wonderful exhibits");
   } 
   System.out.println("");
 }
