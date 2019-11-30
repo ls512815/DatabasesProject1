@@ -125,14 +125,26 @@ class members {
   String query;
   query = query1;
    
-
+  String query2 = "select artist_name " +
+                  "from pieces " +
+                  "where end_date is not null ";
+                 
   Statement stmt = conn.createStatement (); 
   ResultSet rset = stmt.executeQuery(query);
   System.out.println("");
   while (rset.next ()) { 
     System.out.println("There are some new paintings arriving on " +
                         rset.getString(1).substring(0,10) + "! " + "\n" +
-                        "______________________________________________________");
+                        "____________________________________________________" + "\n" +
+                        "There will be paintings from some of our best artists, including: ");
+  } 
+  ResultSet rset2 = stmt.executeQuery(query2);
+  System.out.println("");
+  while (rset2.next ()) { 
+    System.out.println("There are some new paintings arriving on " +
+                        rset2.getString(1) + "! " + "\n" +
+                        "____________________________________________________" + "\n" +
+                        "There will be paintings from some of our best artists, including: ");
   } 
   System.out.println("");
 }
