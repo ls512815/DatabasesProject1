@@ -164,6 +164,7 @@ class members {
   while (rset4.next ()) { 
     System.out.print("        " + rset4.getString(1) + " " + rset4.getString(2) + " \n");
   } 
+  System.out.println("");
   System.out.println("_______________________________________________________________________________" + "\n");
 }
 
