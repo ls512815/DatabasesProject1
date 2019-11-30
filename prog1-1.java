@@ -102,11 +102,7 @@ class members {
   String lname = readEntry("Last Name: ");
   String newlname = readEntry("New Last Name: ");
 
-
-
   String query = "update members set lname=" + "'" + newlname + "'" +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
-
- 
 
   Statement stmt = conn.createStatement (); 
   try {
@@ -123,7 +119,9 @@ class members {
   void report1(Connection conn) 
   throws SQLException, IOException {
 
-  String query1 = "select distinct start_date from pieces where end_date is not null;";
+  String query1 = "select distinct start_date"
+                    + "from pieces"
+                    + "where end_date is not null ";
   String query;
 
   query = query1;
