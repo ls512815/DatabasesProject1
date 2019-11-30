@@ -141,10 +141,7 @@ class members {
   ResultSet rset2 = stmt.executeQuery(query2);
   System.out.println("");
   while (rset2.next ()) { 
-    System.out.println("There are some new paintings arriving on " +
-                        rset2.getString(1) + "! " + "\n" +
-                        "____________________________________________________" + "\n" +
-                        "There will be paintings from some of our best artists, including: ");
+    System.out.println(rset2.getString(1) + " ");
   } 
   System.out.println("");
 }
