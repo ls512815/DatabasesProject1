@@ -130,7 +130,7 @@ class members {
   ResultSet rset = stmt.executeQuery(query);
   System.out.println("");
   while (rset.next ()) { 
-    System.out.println(rset.getString(1));
+    System.out.println(rset.getString(1).substring(0,10));
   } 
   System.out.println("");
 }
