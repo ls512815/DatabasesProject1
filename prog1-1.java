@@ -157,11 +157,7 @@ Statement stmt = conn.createStatement ();
 ResultSet rset = stmt.executeQuery(query);
 System.out.println("");
 while (rset.next ()) { 
-  System.out.println(rset.getString(1) + "   " +
-                     rset.getString(2) + "   " +
-                     rset.getString(3).substring(0,10) + "   " +
-                     rset.getString(4) + "   " +
-                     rset.getString(5));
+  System.out.println(rset.getString(1);
 } 
 System.out.println("");
 }
