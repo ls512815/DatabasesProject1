@@ -152,9 +152,9 @@ class members {
   ResultSet rset3 = stmt.executeQuery(query3);
   System.out.println("");
   while (rset3.next ()) { 
-    System.out.println("      The new paintings will be in gallery "+ 
+    System.out.println("   The new paintings will be in gallery "+ 
                         rset3.getString(1) + ", but don't limit yourself to just that one!" + "\n" + 
-                        "        Come and see all our wonderful exhibits");
+                        "           Come and see all our wonderful exhibits");
   } 
   System.out.println("");
 }
