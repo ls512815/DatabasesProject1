@@ -140,7 +140,7 @@ class members {
 
   Statement stmt = conn.createStatement (); 
   ResultSet rset = stmt.executeQuery(query);
-  System.out.println("_____________________________________________________________________________" + "\n");
+  System.out.println("_______________________________________________________________________________" + "\n");
   while (rset.next ()) { 
     System.out.println("           There are some new paintings arriving on " +
                         rset.getString(1).substring(0,10) + "! " + "\n" +
@@ -164,7 +164,7 @@ class members {
   while (rset4.next ()) { 
     System.out.print("        " + rset4.getString(1) + " " + rset4.getString(2) + " ");
   } 
-  System.out.println("_____________________________________________________________________________" + "\n");
+  System.out.println("_______________________________________________________________________________" + "\n");
 }
 
 
