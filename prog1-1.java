@@ -135,8 +135,8 @@ class members {
   while (rset.next ()) { 
     System.out.println("           There are some new paintings arriving on " +
                         rset.getString(1).substring(0,10) + "! " + "\n" +
-                        "           ____________________________________________________" + "\n" + "\n" +
-                        "There will be paintings from some of our best artists, including: ");
+                        "        ________________________________________________________" + "\n" + "\n" +
+                        "           There will be paintings from some of our best artists, including: ");
   } 
   ResultSet rset2 = stmt.executeQuery(query2);
   System.out.println("");
