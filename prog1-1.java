@@ -124,11 +124,13 @@ class members {
   throws SQLException, IOException {
 
   String query1 = "select distinct start_date from pieces where end_date is not null;";
- 
+  String query;
+
+  query = query1;
    
 
   Statement stmt = conn.createStatement (); 
-  ResultSet rset = stmt.executeQuery(query1);
+  ResultSet rset = stmt.executeQuery(query);
   System.out.println("");
   while (rset.next ()) { 
     System.out.println(rset.getString(1) + "   " +
