@@ -128,7 +128,12 @@ class members {
   String query2 = "select artist_name " +
                   "from pieces " +
                   "where end_date is not null ";
-                 
+               
+                  
+  String query3 = "select distinct gnum " +
+                  "from pieces " +
+                  " where end_date is not null ";
+
   Statement stmt = conn.createStatement (); 
   ResultSet rset = stmt.executeQuery(query);
   System.out.println("");
@@ -136,13 +141,19 @@ class members {
     System.out.println("           There are some new paintings arriving on " +
                         rset.getString(1).substring(0,10) + "! " + "\n" +
                         "        __________________________________________________________" + "\n" + "\n" +
-                        "       There will be paintings from some of our best artists, including: ");
+                        "      There will be paintings from some of our best artists, including: ");
   } 
   ResultSet rset2 = stmt.executeQuery(query2);
   System.out.println("");
   while (rset2.next ()) { 
     System.out.println("                              - " + 
                         rset2.getString(1) + " ");
+  } 
+  ResultSet rset3 = stmt.executeQuery(query3);
+  System.out.println("");
+  while (rset3.next ()) { 
+    System.out.println("      The new paintings will be in gallery "+ 
+                        rset3.getString(1) + ", but don't limit yourself to just that one! Come and see all our wonderful exhibits");
   } 
   System.out.println("");
 }
