@@ -141,7 +141,8 @@ class members {
   ResultSet rset2 = stmt.executeQuery(query2);
   System.out.println("");
   while (rset2.next ()) { 
-    System.out.println("               " + rset2.getString(1) + " ");
+    System.out.println("                            " + 
+                        rset2.getString(1) + " ");
   } 
   System.out.println("");
 }
