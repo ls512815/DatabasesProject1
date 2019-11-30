@@ -134,6 +134,10 @@ class members {
                   "from pieces " +
                   " where end_date is not null ";
 
+  String query4 = "select fname, lname " +
+                  "from members m, pieces p " +
+                  " where m.m_id=p.m_id and end_date is not null ";
+
   Statement stmt = conn.createStatement (); 
   ResultSet rset = stmt.executeQuery(query);
   System.out.println("");
@@ -152,9 +156,14 @@ class members {
   ResultSet rset3 = stmt.executeQuery(query3);
   System.out.println("");
   while (rset3.next ()) { 
-    System.out.println("   The new paintings will be in gallery "+ 
-                        rset3.getString(1) + ", but don't limit yourself to just that one!" + "\n" + 
-                        "           Come and see all our wonderful exhibits");
+    System.out.println("      Come to gallery "+ 
+                        rset3.getString(1) + ", and experience all the new wonderful pieces");
+  } 
+  ResultSet rset4 = stmt.executeQuery(query4);
+  System.out.println("");
+  while (rset4.next ()) { 
+    System.out.println("      Special thanks to our donors, "+ 
+                        rset4.getString(1) + ", ");
   } 
   System.out.println("");
 }
