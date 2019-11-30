@@ -160,10 +160,9 @@ class members {
                         rset3.getString(1) + ", and experience all the new wonderful pieces");
   } 
   ResultSet rset4 = stmt.executeQuery(query4);
-  System.out.println("");
+  System.out.println("      Special thanks to our donors, ");
   while (rset4.next ()) { 
-    System.out.println("      Special thanks to our donors, "+ 
-                        rset4.getString(1) + ", ");
+    System.out.println(rset4.getString(1) + ", ");
   } 
   System.out.println("");
 }
