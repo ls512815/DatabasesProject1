@@ -156,7 +156,7 @@ ResultSet rset = stmt.executeQuery(query);
 System.out.println("");
 while (rset.next ()) { 
   System.out.println("There are new paintings arriving on " +
-                      rset.getString(1)+ " ");
+                      rset.getString(1)+ "!");
 } 
 System.out.println("");
 }
