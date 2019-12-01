@@ -134,10 +134,14 @@ class members {
                   "from pieces " +
                   " where end_date is not null ";
 
-  String query4 = "select fname, lname " +
+  String query4 = "select name " +
+                  "from pieces " +
+                  " where end_date is not null";
+
+  String query5 = "select fname, lname " +
                   "from members m, pieces p " +
                   " where m.m_id=p.m_id and end_date is not null ";
-
+  
   Statement stmt = conn.createStatement (); 
   ResultSet rset = stmt.executeQuery(query);
   System.out.println("_______________________________________________________________________________" + "\n");
@@ -153,16 +157,25 @@ class members {
     System.out.println("                              - " + 
                         rset2.getString(1) + " ");
   } 
+
   ResultSet rset3 = stmt.executeQuery(query3);
   System.out.println("");
   while (rset3.next ()) { 
     System.out.println("      Come to gallery "+ 
                         rset3.getString(1) + ", and experience all the new wonderful pieces");
   } 
+
   ResultSet rset4 = stmt.executeQuery(query4);
-  System.out.println("\n" + "                       Special thanks to our donors, ");
+  System.out.println("");
   while (rset4.next ()) { 
-    System.out.print("        " + rset4.getString(1) + " " + rset4.getString(2) + " ");
+    System.out.print("We are featuring the following pieces of art: "+ 
+                        rset4.getString(1));
+  } 
+
+  ResultSet rset5 = stmt.executeQuery(query5);
+  System.out.println("\n" + "                       Special thanks to our donors, ");
+  while (rset5.next ()) { 
+    System.out.print("        " + rset5.getString(1) + " " + rset5.getString(2) + " ");
   } 
   System.out.println("\n");
 
@@ -177,12 +190,18 @@ class members {
 void report2(Connection conn) 
 throws SQLException, IOException {
 
-String query1 = "select distinct start_date"
-                + "from pieces"
+String query1 = "select distinct start_date "
+                + "from pieces "
                 + "where end_date is not null;";
 String query;
 
 query = query1;
+
+String query2 = "select fname, lname"  
+                + "from members "
+                + "where m_id= " 
+                + "(select m_id" 
+                + "from monatery_donations) ";
  
 
 Statement stmt = conn.createStatement (); 
