@@ -166,10 +166,10 @@ class members {
   } 
 
   ResultSet rset4 = stmt.executeQuery(query4);
-  System.out.println("             We are featuring the following pieces of art: ");
+  System.out.println("               We are featuring the following pieces of art: ");
   System.out.print("          ");
   while (rset4.next ()) { 
-    System.out.print("        " + rset4.getString(1) + " ");
+    System.out.print("      " + rset4.getString(1) + " ");
   } 
 
   ResultSet rset5 = stmt.executeQuery(query5);
