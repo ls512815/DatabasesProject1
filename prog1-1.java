@@ -205,7 +205,18 @@ String query;
 
 query = query1;
 
- 
+String query2 = "select fname, lname "
+                + "from members " 
+                + "where m_id=("
+                + "select m_id "
+                + "from("
+                + "select m_id, count(m_id) as most_frequent "
+                + "from pieces "
+                + "group by m_id "
+                + "order by most_frequent desc) "
+                + "where rownum <=1)";
+
+
 
 Statement stmt = conn.createStatement (); 
 ResultSet rset = stmt.executeQuery(query);
@@ -217,10 +228,28 @@ System.out.println("                   Donated the most money to the museum");
 System.out.println("                   -------------------------------------");
 
 while (rset.next ()) { 
-  System.out.println("                           " + rset.getString(1) + " " + rset.getString(2));
+  System.out.println("                             " + rset.getString(1) + " " + rset.getString(2));
 } 
 System.out.println("");
+
+
+ResultSet rset2 = stmt.executeQuery(query2);
+
+System.out.println("                   Donated the most pieces to the museum");
+System.out.println("                   --------------------------------------");
+
+while (rset2.next ()) { 
+  System.out.println("                             " + rset2.getString(1) + " " + rset2.getString(2));
+} 
+System.out.println("\n");
+
+
+System.out.println("\n");
+
+System.out.println("_______________________________________________________________________________" + "\n");
 }
+
+
 
 
   //readEntry function -- to read input string
