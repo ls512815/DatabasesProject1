@@ -217,7 +217,7 @@ System.out.println("                   Donated the most money to the museum");
 System.out.println("                   -------------------------------------");
 
 while (rset.next ()) { 
-  System.out.println("                     " + rset.getString(1) + rset.getString(2));
+  System.out.println("                           " + rset.getString(1) + " " + rset.getString(2));
 } 
 System.out.println("");
 }
