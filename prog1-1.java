@@ -243,8 +243,8 @@ while (rset2.next ()) {
 } 
 System.out.println("\n");
 
-
-System.out.println("\n");
+System.out.println("   We hope that members continue to donate to keep our museum as beautiful");
+System.out.println("          If you want to donate money or pieces, please reach out ");
 
 System.out.println("_______________________________________________________________________________" + "\n");
 }
