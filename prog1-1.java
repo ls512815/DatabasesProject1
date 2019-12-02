@@ -97,12 +97,12 @@ class members {
   void change_id(Connection conn) 
   throws SQLException, IOException {
 
-  System.out.println("enter the first and last name of the id you want to change");
-  String fname = readEntry("First name: ");
-  String lname = readEntry("Last Name: ");
+  System.out.println("enter the first and last name of last name you want to change");
+  String mid = readEntry("Id: ");
+  String newfname = readEntry("New First Name: ");
   String newlname = readEntry("New Last Name: ");
 
-  String query = "update members set lname=" + "'" + newlname + "'" +  " where fname=" + "'" + fname + "'" + " and lname=" + "'" + lname + "'";
+  String query = "update members set fname=" + "'" + newfname + "'" + "and lname=" + "'" + newlname + "'" + " where m_id=" + "'" + mid + "'" + " and lname=" + "'" + lname + "'";
 
   Statement stmt = conn.createStatement (); 
   try {
