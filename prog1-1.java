@@ -97,7 +97,7 @@ class members {
   void change_id(Connection conn) 
   throws SQLException, IOException {
 
-  System.out.println("enter the first and last name of last name you want to change");
+  System.out.println("enter the id of the member you want to update");
   String mid = readEntry("Id: ");
   String newfname = readEntry("New First Name: ");
   String newlname = readEntry("New Last Name: ");
@@ -111,7 +111,7 @@ class members {
   System.out.println("Error updating member");
   return;
   }
-  System.out.println("Member bdate was updated!");
+  System.out.println("Member information was updated!");
   stmt.close();
   }
 
