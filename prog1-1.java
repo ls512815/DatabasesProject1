@@ -171,6 +171,7 @@ class members {
   while (rset4.next ()) { 
     System.out.print("      " + rset4.getString(1) + " ");
   } 
+  System.out.println("\n");
 
   ResultSet rset5 = stmt.executeQuery(query5);
   System.out.println("\n" + "                       Special thanks to our donors, ");
