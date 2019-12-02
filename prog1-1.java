@@ -222,7 +222,7 @@ Statement stmt = conn.createStatement ();
 ResultSet rset = stmt.executeQuery(query);
 System.out.println("_______________________________________________________________________________" + "\n");
 System.out.println("      We have so many generous members at our museum and we are so appreciative!" + "\n");
-System.out.println("               We wanted to recognise a few specific members " + "\n");
+System.out.println("             We wanted to recognise a few specific members that " + "\n");
 
 System.out.println("                   Donated the most money to the museum");
 System.out.println("                   -------------------------------------");
