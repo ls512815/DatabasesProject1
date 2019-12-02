@@ -168,7 +168,7 @@ class members {
 
   ResultSet rset4 = stmt.executeQuery(query4);
   System.out.println("              We are featuring the following pieces of art: ");
-  System.out.print("                 ");
+  System.out.print("                   ");
   while (rset4.next ()) { 
     System.out.print("  " + rset4.getString(1) + " ");
   } 
@@ -210,7 +210,8 @@ query = query1;
 Statement stmt = conn.createStatement (); 
 ResultSet rset = stmt.executeQuery(query);
 System.out.println("_______________________________________________________________________________" + "\n");
-System.out.println("We have so many generous members at our museum, but we wanted to recognise a few specific members " + "\n");
+System.out.println("We have so many generous members at our museum," + "\n");
+System.out.println("but we wanted to recognise a few specific members " + "\n");
 
 System.out.println("           Donated the most money to the museum");
 System.out.println("           -------------------------------------");
