@@ -102,7 +102,7 @@ class members {
   String newfname = readEntry("New First Name: ");
   String newlname = readEntry("New Last Name: ");
 
-  String query = "update members set fname=" + "'" + newfname + "'" + "and lname=" + "'" + newlname + "'" + " where m_id=" + "'" + mid + "'";
+  String query = "update members set fname=" + "'" + newfname + "'" + ", lname=" + "'" + newlname + "'" + " where m_id=" + "'" + mid + "'";
 
   Statement stmt = conn.createStatement (); 
   try {
