@@ -11,13 +11,13 @@ import java.io.*;
 class members { 
 
   void print_menu() {
-    System.out.println("      GRADEBOOK PROGRAM\n");
+    System.out.println("        MUSEUM PROGRAM\n");
     System.out.println("(1) Select Members Table");
     System.out.println("(2) Add Member");
     System.out.println("(3) Delete Member");
     System.out.println("(4) Change Member Data");
     System.out.println("(5) Display Information About New Exhibits");
-    System.out.println("(6) Display Report 2");
+    System.out.println("(6) Display Highest Donations");
     System.out.println("(q) Quit\n");
   }
 
