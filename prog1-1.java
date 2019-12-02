@@ -16,7 +16,7 @@ class members {
     System.out.println("(2) Add Member");
     System.out.println("(3) Delete Member");
     System.out.println("(4) Change Member Data");
-    System.out.println("(5) Display Report 1");
+    System.out.println("(5) Display Information About New Exhibits");
     System.out.println("(6) Display Report 2");
     System.out.println("(q) Quit\n");
   }
@@ -143,6 +143,7 @@ class members {
                   " where m.m_id=p.m_id and end_date is not null ";
   
   Statement stmt = conn.createStatement (); 
+
   ResultSet rset = stmt.executeQuery(query);
   System.out.println("_______________________________________________________________________________" + "\n");
   while (rset.next ()) { 
@@ -167,7 +168,7 @@ class members {
 
   ResultSet rset4 = stmt.executeQuery(query4);
   System.out.println("              We are featuring the following pieces of art: ");
-  System.out.print("               ");
+  System.out.print("                 ");
   while (rset4.next ()) { 
     System.out.print("  " + rset4.getString(1) + " ");
   } 
@@ -192,26 +193,30 @@ class members {
 void report2(Connection conn) 
 throws SQLException, IOException {
 
-String query1 = "select distinct start_date "
-                + "from pieces "
-                + "where end_date is not null;";
+String query1 = "select fname, lname "  
+                + "from members "
+                + "where m_id= " 
+                + "(select m_id " 
+                + "from monatery_donations "
+                + "where don_amount= "
+                + "(select max(don_amount) "
+                + "from monatery_donations))";
 String query;
 
 query = query1;
 
-String query2 = "select fname, lname"  
-                + "from members "
-                + "where m_id= " 
-                + "(select m_id" 
-                + "from monatery_donations) ";
  
 
 Statement stmt = conn.createStatement (); 
 ResultSet rset = stmt.executeQuery(query);
-System.out.println("");
+System.out.println("_______________________________________________________________________________" + "\n");
+System.out.println("We have so many generous members at our museum, but we wanted to recognise a few specific members " + "\n");
+
+System.out.println("           Donated the most money to the museum");
+System.out.println("           -------------------------------------");
+
 while (rset.next ()) { 
-  System.out.println("There are new paintings arriving on " +
-                      rset.getString(1)+ "!");
+  System.out.println("               " + rset.getString(1));
 } 
 System.out.println("");
 }
