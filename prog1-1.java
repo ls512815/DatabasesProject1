@@ -162,11 +162,11 @@ class members {
   System.out.println("");
   while (rset3.next ()) { 
     System.out.println("      Come to gallery "+ 
-                        rset3.getString(1) + ", and experience all the new wonderful pieces");
+                        rset3.getString(1) + ", and experience all the new wonderful pieces" + "\n");
   } 
 
   ResultSet rset4 = stmt.executeQuery(query4);
-  System.out.println("               We are featuring the following pieces of art: ");
+  System.out.println("              We are featuring the following pieces of art: ");
   System.out.print("          ");
   while (rset4.next ()) { 
     System.out.print("      " + rset4.getString(1) + " ");
